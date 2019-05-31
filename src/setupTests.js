@@ -1,5 +1,7 @@
-import requestAnimationFrame from './tempPolyfills';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import { createSerializer } from 'enzyme-to-json';
 
-export default configure({adapter: new Adapter(), disableLifecycleMethods: true});
+configure({adapter: new Adapter(), disableLifecycleMethods: true});
+
+expect.addSnapshotSerializer(createSerializer({mode: 'deep'}));
