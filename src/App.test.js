@@ -18,12 +18,16 @@ describe('App', () => {
       app.find('.btn-add').simulate('click');
     })
 
+    afterEach(() => {
+      app.setState({ gifts: [] });
+    })
+
     it('adds a new gift to `state`', () => {
       expect(app.state().gifts).toEqual([{id: 1}]);
     })
     
     it('adds a new gift item to rendered list', () => {
-      expect(app.find('.gift-list').children().length).toEqual(2);
+      expect(app.find('.gift-list').children().length).toEqual(1);
     })
   })
 })
