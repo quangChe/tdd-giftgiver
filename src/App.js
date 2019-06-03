@@ -21,7 +21,7 @@ class App extends React.Component {
         <div className='gift-list'>
           {
             this.state.gifts.map(gift => (
-              <div/>
+              <div key={gift.id}>{gift.id}</div>
             ))
           }
         </div>
