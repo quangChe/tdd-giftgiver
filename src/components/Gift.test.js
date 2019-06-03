@@ -14,12 +14,14 @@ describe('Gift', () => {
   })
 
   describe('when typing into the person input', () => {
+    const INPUT_VALUE = 'Uncle Burt';
+
     beforeEach(() => {
-      gift.find('.input-person').simulate('change', { target: { value: 'Uncle Burt' } });
+      gift.find('.input-person').simulate('change', { target: { value: INPUT_VALUE } });
     })
 
     it('updates the person in `state`', () => {
-      expect(gift.state().person).toEqual('Uncle Burt');
+      expect(gift.state().person).toEqual(INPUT_VALUE);
     })
   })
 })

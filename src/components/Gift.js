@@ -5,10 +5,20 @@ class Gift extends React.Component {
     person: '',
     present: ''
   }
-  
+
+  changePerson = (e) => {
+    const person = e.target.value;
+    this.setState({ person });
+  }
+
   render() {
     return (
-      <div></div>
+      <div>
+        <input
+          type='text'
+          onChange={this.changePerson}
+          className='input-person' />
+      </div>
     )
   }
 }

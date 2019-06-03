@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Gift renders without crashing 1`] = `<div />`;
+exports[`Gift renders without crashing 1`] = `
+<div>
+  <input
+    className="input-person"
+    onChange={[Function]}
+    type="text"
+  />
+</div>
+`;
