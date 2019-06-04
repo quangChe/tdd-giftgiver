@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Button } from 'react-bootstrap';
 import Gift from './components/Gift';
-
+import { max_number } from './helper/index';
 
 class App extends React.Component {
   state = {
@@ -12,8 +12,8 @@ class App extends React.Component {
   addGift = (e) => {
     const { gifts }= this.state;
     const ids = gifts.map(gift => gift.id);
-    const newId = ids.length ? Math.max(...ids) : 0;
-    return this.setState({gifts: gifts.concat({id: newId + 1})});
+    const id = max_number(ids) + 1;
+    return this.setState({gifts: gifts.concat({ id })});
   }
 
   removeGift = (id) => {
