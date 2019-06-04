@@ -15,6 +15,11 @@ class App extends React.Component {
     return this.setState({gifts: gifts.concat({id: newId + 1})});
   }
 
+  removeGift = (id) => {
+    const gifts = this.state.gifts.filter(gift => gift.id !== id);
+    this.setState({ gifts })
+  }
+
   render() { 
     return (
       <div>
