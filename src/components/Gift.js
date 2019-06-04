@@ -11,13 +11,25 @@ class Gift extends React.Component {
     this.setState({ person });
   }
 
+  changePresent = (e) => {
+    const present = e.target.value;
+    this.setState({ present });
+  }
+
   render() {
     return (
       <div>
+        <label>Person: </label>
         <input
           type='text'
           onChange={this.changePerson}
           className='input-person' />
+        <br/>
+        <label>Present: </label>
+        <input 
+          type='text'
+          onChange={this.changePresent}
+          className='input-present' />
       </div>
     )
   }
