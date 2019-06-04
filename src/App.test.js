@@ -11,23 +11,29 @@ describe('App', () => {
   
   it('initializes the state with an empty list of gifts', () => {
     expect(app.state().gifts).toEqual([]);
-  })
+  });
 
   describe('when clicking the `add gift` button', () => {
+    const id = 1;
+
     beforeEach(() => {
       app.find('.btn-add').simulate('click');
-    })
+    });
 
     afterEach(() => {
       app.setState({ gifts: [] });
-    })
+    });
 
     it('adds a new gift to `state`', () => {
-      expect(app.state().gifts).toEqual([{id: 1}]);
-    })
+      expect(app.state().gifts).toEqual([{ id }]);
+    });
     
     it('adds a new gift item to rendered list', () => {
       expect(app.find('.gift-list').children().length).toEqual(1);
-    })
-  })
-})
+    });
+
+    it('creates a Gift component', () => {
+      expect(app.find('Gift').exists()).toEqual(true);
+    });
+  });
+});
