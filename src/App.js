@@ -3,6 +3,7 @@ import './App.scss';
 import { Button } from 'react-bootstrap';
 import Gift from './components/Gift';
 
+
 class App extends React.Component {
   state = {
     gifts: [],
@@ -27,7 +28,10 @@ class App extends React.Component {
         <div className='gift-list'>
           {
             this.state.gifts.map(gift => (
-              <Gift key={gift.id}/>
+              <Gift 
+                key={gift.id}
+                gift={gift}
+                removeGift={this.removeGift} />
             ))
           }
         </div>

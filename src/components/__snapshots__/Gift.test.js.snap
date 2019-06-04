@@ -2,10 +2,28 @@
 
 exports[`Gift renders without crashing 1`] = `
 <div>
+  <label>
+    Person: 
+  </label>
   <input
     className="input-person"
     onChange={[Function]}
     type="text"
   />
+  <br />
+  <label>
+    Present: 
+  </label>
+  <input
+    className="input-present"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    className="btn-remove"
+    onClick={[Function]}
+  >
+    Remove Gift
+  </button>
 </div>
 `;

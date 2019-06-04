@@ -30,6 +30,10 @@ class Gift extends React.Component {
           type='text'
           onChange={this.changePresent}
           className='input-present' />
+
+        <button 
+          className='btn-remove'
+          onClick={() => this.props.removeGift(this.props.gift.id)}>Remove Gift</button>
       </div>
     )
   }
